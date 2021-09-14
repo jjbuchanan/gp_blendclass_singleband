@@ -1,0 +1,8 @@
+# All values taken from
+# https://github.com/lsst/throughputs/tree/master/baseline
+
+# total_*, hardware_*
+# Wavelength(nm)  Throughput(0-1)
+
+# darksky
+# Wavelength(nm)  Flambda(ergs/cm^s/s/nm)
