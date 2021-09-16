@@ -1,3 +1,29 @@
+# Overview
+This repository contains the code used for the data preprocessing, image simulation, and model training and analysis reported in the paper "Gaussian Process Classification for Galaxy Blend Identification in LSST" ([arXiv:2107.09246](https://arxiv.org/abs/2107.09246)).
+
+# DC2 catalog preprocessing
+## Basic usage
+Run the notebook `dc2catalogmerge.ipynb`
+
+Ensure that GCRCatalogs has been set up and that the catalogs `desc_dc2_run2.2i_dr6_truth` and `desc_cosmodc2` are available.  
+The [LSSTDESC Data Portal](https://lsstdesc-portal.nersc.gov/) contains instructions on how to access the publicly available data from these catalogs and set up GCRCatalogs.  
+To match the paper results, ensure that all the files corresponding to CosmoDC2 Healpix ID 9685 are available.
+
+## Python dependencies
+GCRCatalogs, jupyter, numpy, scipy, matplotlib (to make the plots in the notebook)  
+Tested in Python 3.8.7 on Windows 10.
+
+# Coadd image simulation
+Note: The specific images used in the paper are contained in `data/simulated_scenes` in this repository.
+## Basic usage
+Inside `image_simulation`:  
+`python coadd_simulation.py`
+
+## Python dependencies
+numpy, pandas  
+galsim, which is simplest to install in a conda environment. See the galsim documentation [here](http://galsim-developers.github.io/GalSim/_build/html/index.html).  
+Tested in Python 3.8.7 on Ubuntu Linux.
+
 # Classifier models (except CNN)
 ## Basic usage
 `python hyperparameter_scan.py`
@@ -6,11 +32,10 @@ Uncomment one and only one line in the final block, depending on whether you wan
 
 The main methods begin with a variety of options for examining different types of models, hyperparameters, and cross-validation strategies.
 
-This code was developed and run in Windows 10. Every effort has been made to keep file paths OS-agnostic, but some tweaking may still be needed to run on other OS's.
-
 ## Python dependencies
 All of the following should be available via pip install:  
-numpy, pandas, sep, astropy, scipy, sklearn, progressbar2, muygpys
+numpy, pandas, sep, astropy, scipy, sklearn, progressbar2, muygpys  
+Tested in Python 3.8.7 on Windows 10.
 
 See https://github.com/LLNL/MuyGPyS for more information on MuyGPyS, the Gaussian process modeling utility used in this analysis.
 
@@ -26,14 +51,5 @@ It makes use of the utility script
 `footprints_and_cutouts.py`
 
 ## Python dependencies
-tensorflow, numpy, pandas, tensorflow_probability, matplotlib, sklearn, scipy
-
-# Coadd image simulation
-## Basic usage
-Inside `image_simulation`:  
-`python coadd_simulation.py`
-
-## Python dependencies
-galsim, which is simplest to install in a conda environment. See the galsim documentation [here](http://galsim-developers.github.io/GalSim/_build/html/index.html).
-
-Because galsim is not supported on Windows, the image simulation code was developed and run in Ubuntu Linux.
+tensorflow, numpy, pandas, tensorflow_probability, matplotlib, sklearn, scipy  
+Tested in Python 3.8.7 on Windows 10.
