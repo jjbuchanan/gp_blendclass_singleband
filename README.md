@@ -1,6 +1,8 @@
 # Overview
 This repository contains the code used for the data preprocessing, image simulation, and model training and analysis reported in the paper "Gaussian Process Classification for Galaxy Blend Identification in LSST" ([arXiv:2107.09246](https://arxiv.org/abs/2107.09246)).
 
+Release number: **LLNL-CODE-827586**
+
 # DC2 catalog preprocessing
 ## Basic usage
 Run the notebook `dc2catalogmerge.ipynb`
